@@ -12,7 +12,7 @@ module.exports = {
 		filename: '[name].bundle.js',
 		chunkFilename: '[name].chunk.js?t=' + new Date().getTime(),
 		path: join(__dirname, 'docs'),
-		publicPath: '/'
+		publicPath: '/docs'
 	},
 	optimization: {
 		splitChunks: {
