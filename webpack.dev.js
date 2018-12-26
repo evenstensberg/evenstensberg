@@ -11,7 +11,7 @@ module.exports = {
 	output: {
 		filename: '[name].bundle.js',
 		chunkFilename: '[name].chunk.js?t=' + new Date().getTime(),
-		path: join(__dirname, 'dist'),
+		path: join(__dirname, 'docs'),
 		publicPath: '/'
 	},
 	optimization: {
@@ -97,7 +97,7 @@ module.exports = {
     devServer: {
         hot: true,
         port: 5000,
-        contentBase: '/dist/',
+        contentBase: '/docs/',
         historyApiFallback: true,
         headers: {
             "Access-Control-Allow-Origin": "http://localhost:3000",
