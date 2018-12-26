@@ -1,0 +1,17 @@
+{
+    "presets": [["@babel/preset-env", {
+      "modules": false,
+      "useBuiltIns": "usage"
+    }], "@babel/react"],
+    "env": {
+      "test": {
+        "presets": [["@babel/preset-env"], "@babel/react"]
+      },
+      "production": {
+        "presets": [["minify", {
+          "builtIns" : false
+        }]]
+      }
+    },
+    "plugins": ["syntax-dynamic-import", "react-hot-loader/babel", "@babel/plugin-proposal-class-properties"]
+  }

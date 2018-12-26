@@ -1,0 +1,20 @@
+.oss {
+    color: black;
+    display: flex;
+}
+
+.oss-container {
+    text-align: center;
+    border-style: solid;
+    border-width: 0px 3px 0px 0px;
+    p {
+        font-size: 20px;
+        padding: 20px;
+    }
+}
+
+.logo-img {
+        position: relative;
+        bottom: 50px;
+        left: 200px;
+}
