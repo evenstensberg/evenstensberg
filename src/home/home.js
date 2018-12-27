@@ -17,7 +17,7 @@ class Home extends Component {
             <div className="image-container shape">
             <img src={avatar} className="avatar-image curve-shape"/>
             <div className="metadata">
-                <h3 className="intro">Hi, This is Work in Progress! :)</h3>
+                <h3 className="intro">This is Work in Progress! :)</h3>
                 <a href="https://github.com/evenstensberg" target="_blank" rel="noopener noreferrer" className="hidden-gh"><img src={github} height="40" className="rounded gh" /></a>
                 <a href="https://medium.com/@ev1stensberg" target="_blank" rel="noopener noreferrer" className="hidden-med"><img src={medium} height="40" className="rounded med" /></a>
                 <a href="https://twitter.com/evenstensberg" target="_blank" rel="noopener noreferrer" className="hidden-tw"><img src={twitter} height="40" className="rounded tw"  /></a>
