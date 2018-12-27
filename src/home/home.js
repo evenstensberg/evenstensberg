@@ -13,7 +13,7 @@ class Home extends Component {
     render() {
         let arr= "<-----"
         return(
-            <div className="container-mid-align">
+            <div className="container-mid-align cover-al">
             <div className="image-container shape">
             <img src={avatar} className="avatar-image curve-shape"/>
             <div className="metadata">

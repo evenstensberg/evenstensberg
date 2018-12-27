@@ -1,12 +1,11 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Redirect, Link } from 'react-router-dom';
 import { hot } from 'react-hot-loader';
 
 
 import Home from './home/home';
 import Portfolio from './portfolio/portfolio';
-import Header from './header/header';
 import OSS from './open-source/open-source';
 import Misc from './misc/misc';
 
@@ -15,13 +14,17 @@ import './index.scss';
 class Routes extends Component {
 
     render() {
-        const isHomeNavy = !!~window.location.pathname.indexOf('home') || window.location.pathname === '/';
     return(
     <Router basename="/">
         <div className="container">
             <div>
-                <Header />
-                <div className={(isHomeNavy ? "cover-all-navy" : "cover-all")}>
+            <nav className="header">
+                <Link to="/">Home</Link>
+                <Link to="/portfolio">Portfolio</Link>
+                <Link to="/oss">Open Source</Link>
+                <Link to="/misc">Misc</Link>
+            </nav>
+                <div id="changeme" className={"cover-all"}>
                     <Switch>
                     <Route exact path="/" render={() => <Redirect to={'/home'} />} />
                         <Route

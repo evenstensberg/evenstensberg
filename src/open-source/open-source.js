@@ -10,6 +10,7 @@ import plugin2 from './plugin2.png';
 import GoogleChrome from './google.jpeg';
 
 class OSS extends Component {
+
     render() {
         return(
             <div className="oss">

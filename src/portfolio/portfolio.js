@@ -1,34 +1,15 @@
 import React, {Component} from 'react';
 
 import "./portfolio.scss";
-import pdf from './certificate.pdf';
-import { Document, Page } from 'react-pdf';
 
 function calculateAge(birthday) { // birthday is a date
     var ageDifMs = Date.now() - new Date(birthday).getTime();
     var ageDate = new Date(ageDifMs); // miliseconds from epoch
     return Math.abs(ageDate.getUTCFullYear() - 1970);
   }
-  const options = {
-    cMapUrl: 'cmaps/',
-    cMapPacked: true,
-  };
 
 class Portfolio extends Component {
-    state = {
-        file: pdf,
-        numPages: null,
-      }
-      onFileChange = (event) => {
-        this.setState({
-          file: event.target.files[0],
-        });
-      }
-      onDocumentLoadSuccess = ({ numPages }) => {
-        this.setState({ numPages });
-      }
     render() {
-        const { file, numPages } = this.state;
         return(
             <div className="portfolio">
                 <h1>Even Stensberg ({calculateAge('1998-02-03')})</h1>
@@ -119,8 +100,6 @@ class Portfolio extends Component {
                     </h2>
                     <h3>- Soccer, stats found <a href="https://www.fotball.no/fotballdata/person/profil/?fiksId=3425533">here</a> :)</h3>
                     <h3>- Kayak</h3>
-                    <h3>- Open Source</h3>
-                    <h3>- Drinking Beer</h3>
                     <h3>- Lift weights</h3>
                     </div>
                 </div>

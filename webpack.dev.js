@@ -12,7 +12,7 @@ module.exports = {
 		filename: '[name].bundle.js',
 		chunkFilename: '[name].chunk.js?t=' + new Date().getTime(),
 		path: join(__dirname, 'dist'),
-		publicPath: './'
+		publicPath: '/'
 	},
 	optimization: {
 		splitChunks: {
@@ -100,7 +100,7 @@ module.exports = {
         contentBase: '/dist/',
         historyApiFallback: true,
         headers: {
-            "Access-Control-Allow-Origin": "http://localhost:3000",
+            "Access-Control-Allow-Origin": "http://localhost:5000",
             "Access-Control-Allow-Credentials": "true",
             "Access-Control-Allow-Headers": "Content-Type, Authorization, x-id, Content-Length, X-Requested-With",
             "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS"
