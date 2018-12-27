@@ -54,6 +54,9 @@ class Portfolio extends Component {
                         - Software Engineer Contractor, Google, 2017
                     </h3>
                     <h3>
+                        - Software Developer Contractor, Fin Tech, USA, 2017
+                    </h3>
+                    <h3>
                         - Front End Developer Intern S'18, <a href="https://www.teliacompany.com/en">Telia Company</a>, Jun/Aug 2018
                     </h3>
                     <h3>
