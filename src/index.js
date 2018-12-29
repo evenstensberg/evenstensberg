@@ -17,15 +17,13 @@ class Routes extends Component {
     return(
     <Router basename="/">
         <div className="container">
-            <div>
             <nav className="header">
-                <Link to="/">Home</Link>
-                <Link to="/portfolio">Portfolio</Link>
-                <Link to="/oss">Open Source</Link>
-                <Link to="/misc">Misc</Link>
+                <Link className="header-item" to="/">Home</Link>
+                <Link className="header-item" to="/portfolio">Portfolio</Link>
+                <Link className="header-item" to="/oss">Open Source</Link>
+                <Link className="header-item" to="/misc">Misc</Link>
             </nav>
-                <div id="changeme" className={"cover-all"}>
-                    <Switch>
+            <Switch>
                     <Route exact path="/" render={() => <Redirect to={'/home'} />} />
                         <Route
                             exact
@@ -48,8 +46,6 @@ class Routes extends Component {
                             render={props => <Misc />}
                             />
                     </Switch>
-                </div>
-            </div>
         </div>
     </Router>
     )
