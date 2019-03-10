@@ -1,32 +1,5 @@
-.container {
-    color: white;
-}
-
-a {
-    color: white;
-    text-decoration: none;
-}
-
 html, body {
     width: 100%;
     height: 100%;
     margin: 0;
-}
-
-
-.cover-all-navy {
-    background-color: #015B7E;
-    overflow: hidden !important;
-}
-
-.header {
-    background-color: #015B7E;
-    text-align: end;
-    display: flex;
-}
-
-.header-item {
-    padding: 20px;
-    flex-grow: 1;
-    flex-basis: 0;
 }
