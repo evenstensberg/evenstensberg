@@ -12,8 +12,8 @@ module.exports = {
   mode: 'production',
   target: 'node',
   output: {
-    path: path.join(__dirname, '../../lib/server/bin'),
-    filename: './server.js',
+    path: path.join(__dirname, '..', 'lib', 'server', 'bin'),
+    filename: 'server.js',
   },
   externals: [nodeExternals()],
   module: {

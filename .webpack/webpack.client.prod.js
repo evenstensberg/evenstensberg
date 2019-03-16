@@ -3,15 +3,15 @@ const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  context: path.join(__dirname, '../lib/client'),
+  context: path.join(__dirname, '..', 'lib', 'client'),
   devtool: 'source-map',
   entry: [
     './src/index.js'
   ],
   mode: 'production',
   output: {
-    path: path.join(__dirname, '../../lib/server/public'),
-    filename: './js/index.js',
+    path: path.join(__dirname, '..', 'lib', 'server', 'public'),
+    filename: 'js/index.js',
     publicPath: '/',
   },
   module: {
