@@ -5,7 +5,7 @@ const app = express();
 app.get('/', (req, res) => {
   res
     .status(200)
-    .send(':)')
+    .redirect('https://www.youtube.com/watch?v=nl9NaUzZk1s')
     .end();
 });
 
