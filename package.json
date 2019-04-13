@@ -5,11 +5,8 @@
   "main": "server/bin/server.js",
   "scripts": {
     "prestart": "npm run build",
-    "dev": "webpack-dev-server --config .webpack/webpack.client.dev.js",
-    "build": "npm run build:client && npm run build:server",
-    "build:server": "cross-env NODE_ENV=production webpack --config .webpack/webpack.server.prod.js --progress",
-    "build:client": "cross-env NODE_ENV=production webpack --config .webpack/webpack.client.prod.js --progress",
-    "start:new": "cd lib/server && node bin/server.js",
+    "dev": "cross-env NODE_ENV=development webpack --config  .webpack/webpack.client.dev.js",
+    "build": "cross-env NODE_ENV=production webpack --config .webpack/webpack.client.prod.js --progress",
     "start": "node app.js",
     "serve": "npm run build && npm run start",
     "deploy": "gcloud app deploy",

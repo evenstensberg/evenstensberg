@@ -1,18 +1,18 @@
 const path = require('path');
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  context: path.join(__dirname, '..', 'lib', 'client'),
   devtool: 'source-map',
   entry: [
-    './src/index.js'
+    './lib/index.js'
   ],
   mode: 'production',
   output: {
-    path: path.join(__dirname, '..', 'lib', 'server', 'public'),
-    filename: 'js/index.js',
-    publicPath: '/',
+    path: path.join(__dirname, '..', 'public'),
+    filename: 'index.js',
+/*     publicPath: '/', */
   },
   module: {
     rules: [
@@ -84,6 +84,11 @@ module.exports = {
       'process.env': {
         'NODE_ENV': JSON.stringify('production')
       }
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'index.html',
+      template: path.join(__dirname, '..', 'views', 'index.ejs'),
+      inject: true,
     }),
     new MiniCssExtractPlugin({
 			filename: 'css/main.css'

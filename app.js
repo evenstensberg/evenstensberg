@@ -1,13 +1,13 @@
 const express = require('express');
-
+const path = require('path')
 const app = express();
 
-app.get('/', (req, res) => {
-  res
-    .status(200)
-    .redirect('https://www.youtube.com/watch?v=nl9NaUzZk1s')
-    .end();
-});
+app.use(express.static('public'))
+
+app.get('*', function(req, res) {
+    res
+    .sendFile('index.html', {root: path.join(__dirname, 'public')})
+  });
 
 // Start the server
 const PORT = process.env.PORT || 8080;
