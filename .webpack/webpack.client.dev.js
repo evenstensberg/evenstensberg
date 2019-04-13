@@ -1,27 +1,18 @@
 const path = require('path');
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  context: path.join(__dirname, '../lib/client'),
   devtool: 'inline-source-map',
   entry: [
-    'react-hot-loader/patch',
-    'webpack-dev-server/client?http://localhost:8080',
-    'webpack/hot/only-dev-server',
-    './src/index.js',
+    './lib/index.js'
   ],
   mode: 'development',
   output: {
-    path: path.join(__dirname, '../lib/server/public'),
-    filename: './js/index.js',
-    publicPath: '/',
-  },
-  devServer: {
-    hot: true,
-    publicPath: '/',
-    historyApiFallback: true
+    path: path.join(__dirname, '..', 'public'),
+    filename: 'index.js',
+/*     publicPath: '/', */
   },
   module: {
     rules: [
@@ -31,9 +22,7 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: '[path][name]-[hash:8].[ext]',
-              outputPath: 'images/',
-              emitFile: false,
+              name: '[path][name]-[hash:8].[ext]'
             },
           },
         ]
@@ -74,7 +63,9 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: '[path][name].[ext]'
+              name: '[path][name].[ext]',
+              outputPath: 'images/',
+              emitFile: false,
             }
           }
         ]
@@ -86,18 +77,22 @@ module.exports = {
           loader: 'babel-loader'
         }
       },
-    ] 
+    ]
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NamedModulesPlugin(),
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': JSON.stringify('development')
+      }
+    }),
     new HtmlWebpackPlugin({
       filename: 'index.html',
-      template: path.join(__dirname, '../lib/server/views/index.dev.ejs'),
-      inject: false,
+      template: path.join(__dirname, '..', 'views', 'index.ejs'),
+      inject: true,
     }),
     new MiniCssExtractPlugin({
 			filename: 'css/main.css'
 		}),
   ],
 };
+

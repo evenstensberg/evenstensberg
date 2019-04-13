@@ -4,12 +4,18 @@
   "description": "My personal site",
   "main": "server/bin/server.js",
   "scripts": {
-    "dev": "webpack-dev-server --config .webpack/webpack.client.dev.js",
-    "build": "npm run build:client && npm run build:server",
-    "build:server": "cross-env NODE_ENV=production webpack --config .webpack/webpack.server.prod.js --progress",
-    "build:client": "cross-env NODE_ENV=production webpack --config .webpack/webpack.client.prod.js --progress",
-    "start": "cd lib/server && node bin/server.js",
-    "serve": "npm run build && npm run start"
+    "prestart": "npm run build",
+    "dev": "cross-env NODE_ENV=development webpack --config  .webpack/webpack.client.dev.js",
+    "build": "cross-env NODE_ENV=production webpack --config .webpack/webpack.client.prod.js --progress",
+    "start": "node app.js",
+    "serve": "npm run build && npm run start",
+    "deploy": "gcloud app deploy",
+    "system-test": "repo-tools test app",
+    "test": "npm run system-test",
+    "e2e-test": "repo-tools test deploy"
+  },
+  "engines": {
+    "node": ">=8.0.0"
   },
   "repository": {
     "type": "git",
@@ -22,6 +28,7 @@
   },
   "homepage": "https://github.com/evenstensberg/evenstensberg#readme",
   "dependencies": {
+    "@babel/node": "^7.2.2",
     "@material-ui/core": "^3.9.2",
     "@material-ui/icons": "^3.0.2",
     "cross-env": "^5.1.4",
@@ -43,6 +50,7 @@
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@babel/preset-env": "^7.2.3",
     "@babel/preset-react": "^7.0.0",
+    "@google-cloud/nodejs-repo-tools": "^3.2.0",
     "babel-loader": "^8.0.4",
     "css-loader": "^2.1.0",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
@@ -60,5 +68,9 @@
     "webpack-cli": "^3.3.0",
     "webpack-dev-server": "^3.1.14",
     "webpack-node-externals": "^1.7.2"
+  },
+  "cloud-repo-tools": {
+    "requiresKeyFile": true,
+    "requiresProjectId": true
   }
 }
