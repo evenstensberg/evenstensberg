@@ -12,7 +12,7 @@ app.get('*', function(req, res) {
   
 const server = http.createServer(app);
 
-const io = socketIO(server);
+/* const io = socketIO(server);
 
 
 
@@ -35,7 +35,7 @@ io.on("connection", socket => {
             console.log(err)
         }
     });
-});
+}); */
 // Start the server
 const PORT = process.env.PORT || 8080;
 server.listen(PORT, () => {

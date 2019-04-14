@@ -1,18 +1,21 @@
-const path = require('path');
-const webpack = require('webpack');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require("path");
+const webpack = require("webpack");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+
+const isDev = true;
+const isHmr = process.env.NODE_ENV === "hmr";
 
 module.exports = {
-  devtool: 'source-map',
-  entry: [
-    './lib/index.js'
-  ],
-  mode: 'production',
+  devtool: "inline-source-map",
+  entry: {
+    main: "./lib/index.js"
+  },
+  mode: "production",
   output: {
-    path: path.join(__dirname, '..', 'public'),
-    filename: 'index.js',
-/*     publicPath: '/', */
+    path: path.join(__dirname, "..", "public"),
+    filename: "js/[name].bundle.[hash].js",
+    chunkFilename: "chunks/[name].chunk.[hash].js"
   },
   module: {
     rules: [
@@ -20,52 +23,75 @@ module.exports = {
         test: /\.(jpg|jpeg|png|gif|svg|pdf|ico)$/,
         use: [
           {
-            loader: 'file-loader',
+            loader: "file-loader",
             options: {
-              name: '[path][name]-[hash:8].[ext]'
-            },
-          },
+              name: "[path][name]-[hash:8].[ext]"
+            }
+          }
         ]
       },
       {
         test: /\.css$|sass$|\.scss$/,
         use: [
           {
-            loader: MiniCssExtractPlugin.loader
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              hmr: isHmr,
+              reloadAll: isHmr
+            }
           },
           {
-            loader: 'css-loader',
-          },
-          { loader: 'postcss-loader', options: {
-            config: {
-              path: path.join(process.cwd(), 'postcss.config.js')
+            loader: "css-loader",
+            options: {
+              sourceMap: isDev
             }
-          } },
-          { loader: 'sass-loader' }
+          },
+          {
+            loader: "postcss-loader",
+            options: {
+              ident: "postcss",
+              sourceMap: isDev,
+              plugins: function() {
+                return [
+                  require("precss")(),
+                  require("autoprefixer")({
+                    browsers: ["last 3 versions", "> 1%", "IE 10"]
+                  }),
+                  require("postcss-preset-env")()
+                ];
+              }
+            }
+          },
+          {
+            loader: "sass-loader",
+            options: {
+              sourceMap: isDev
+            }
+          }
         ]
       },
       {
         test: /\.svg$/,
         use: [
           {
-            loader: 'svg-inline-loader',
+            loader: "svg-inline-loader",
             options: {
               limit: 10 * 1024,
               noquotes: true
             }
           },
           {
-            loader: 'url-loader',
+            loader: "url-loader",
             options: {
               limit: 10 * 1024
             }
           },
           {
-            loader: 'file-loader',
+            loader: "file-loader",
             options: {
-              name: '[path][name].[ext]',
-              outputPath: 'images/',
-              emitFile: false,
+              name: "[path][name].[ext]",
+              outputPath: "images/",
+              emitFile: false
             }
           }
         ]
@@ -74,25 +100,25 @@ module.exports = {
         test: /\.js$/,
         exclude: /(node_modules)/,
         use: {
-          loader: 'babel-loader'
+          loader: "babel-loader"
         }
-      },
+      }
     ]
   },
   plugins: [
     new webpack.DefinePlugin({
-      'process.env': {
-        'NODE_ENV': JSON.stringify('production')
+      "process.env": {
+        NODE_ENV: JSON.stringify("development")
       }
     }),
     new HtmlWebpackPlugin({
-      filename: 'index.html',
-      template: path.join(__dirname, '..', 'views', 'index.ejs'),
-      inject: true,
+      filename: "index.html",
+      template: path.join(__dirname, "..", "views", "index.ejs"),
+      inject: true
     }),
     new MiniCssExtractPlugin({
-			filename: 'css/main.css'
-		}),
-  ],
+      filename: "css/[name].bundle.[hash].css",
+      chunkFilename: "chunks/[id].chunk.[hash].css"
+    })
+  ]
 };
-
