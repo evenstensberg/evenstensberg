@@ -5,15 +5,17 @@
   "main": "server/bin/server.js",
   "scripts": {
     "prestart": "npm run build",
-    "dev": "cross-env NODE_ENV=development webpack --config  .webpack/webpack.client.dev.js",
-    "build": "cross-env NODE_ENV=production webpack --config .webpack/webpack.client.prod.js --progress",
-    "hot": "cross-env NODE_ENV=hot webpack-dev-server --config .webpack/webpack.hot.js",
+    "dev": "cross-env NODE_ENV=development webpack",
+    "dev:sup": "cross-env NODE_ENV=development webpack --config  .webpack/webpack.config.dev.js",
+    "prod": "cross-env NODE_ENV=production webpack",
+    "hot": "cross-env NODE_ENV=hot webpack-dev-server --config .webpack/webpack.config.hot.js",
     "start": "node app.js",
     "serve": "npm run build && npm run start",
     "deploy": "gcloud app deploy",
     "system-test": "repo-tools test app",
     "test": "npm run system-test",
-    "e2e-test": "repo-tools test deploy"
+    "e2e-test": "repo-tools test deploy",
+    "help": "cross-env NODE_ENV=development webpack --help"
   },
   "engines": {
     "node": ">=8.0.0"
@@ -68,8 +70,8 @@
     "style-loader": "^0.23.1",
     "svg-inline-loader": "^0.8.0",
     "url-loader": "^1.1.2",
-    "webpack": "^4.30.0",
-    "webpack-cli": "^3.3.0",
+    "webpack": "^4.33.0",
+    "webpack-cli": "file:../webpack-cli",
     "webpack-dev-server": "^3.3.1",
     "webpack-merge": "^4.2.1"
   },
