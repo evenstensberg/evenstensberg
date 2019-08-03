@@ -10,7 +10,7 @@ As a SWE intern, I was handed tasks given to regular Engineers and I was super h
 
 In general, Cognite is flexible and is an understandable, inclusive employer (and I am not getting paid to write these words). By that, they understand that an employee is effective some parts of the day and some other not so. What that meant, was that they understood that you needed to take a step back to be more productive, and that social life as well as personal health was important to them in order for them to make me succeed, which I think was one an eye-opener for me as well.
 
-This is what tech companies should be like and I was lucky to have a chance there workning alongside some mega smart (and driven!!) people. If you consider to work in Norway, already working here or want to work for an employer that actually cares, I would consider Cognite.
+This is what tech companies should be like and I was lucky to have a chance there working alongside some mega smart (and driven!!) people. If you consider to work in Norway, already working here or want to work for an employer that actually cares, I would consider Cognite.
 
 All in all, a successful internship, getting new friends, producing code and having fun. Thanks to everyone being apart of that, much appreciated. If you have questions about how it was there, feel free to reach out to me and I will be happy to provide some thoughts!
 
