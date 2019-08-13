@@ -2,7 +2,7 @@
 
 **When working with source code, either if it is Open Source, Closed Source or as a collaborative effort, one thing is inevitable; PRs.**
 
-***Pull Requests are the final stage of getting your code ready for a production build, staging or to any sort of project where other people will rely on the code you write. It is important that it lives up to the expectations of the codebase. In this post, I will try to summarize some things I have learnt through Open Source and working together in teams for companies and in Open Source.***
+***Pull Requests are the final stage of getting your code ready for a production build, staging or to any sort of project where other people will rely on the code you write. It is important that it lives up to the expectations of the codebase. In this post, I will try to summarize some things I have learnt through Open Source and working together in teams for companies.***
 
 ---
 
@@ -15,15 +15,15 @@ I really like how the [Lighthouse](https://developers.google.com/web/tools/light
 
 Some might argue that this is bad, although in my opinion, it is easier to understand the practical case if you have some code to refer to. Submitting unfinished code is not a bad thing, not following up on your work is. What that means, is that if you submit a draft Pull Request, it is easier for people to follow your thought process and intention as why they should implement a potential feature or bugfix. 
 
-Code is a common thing for all developers, and people can make their own conclusions based on that. By the way, GitHub now has a nice [drafting](https://github.blog/2019-02-14-introducing-draft-pull-requests/) feature that I really like, which makes it easier for maintainers and for developers in general to have these kinds of discussions. The only downside I can come up with submitting a draft Pull Requests (as a way to discuss a potential fix or implementation), is that time is lost if not accepted. Now, why would you care and why would you need to do this? 
+Code is a common thing for all developers, and people can make their own conclusions based on that. By the way, GitHub now has a nice [drafting](https://github.blog/2019-02-14-introducing-draft-pull-requests/) feature that I really like, which makes it easier for maintainers and for developers in general to have these kinds of discussions. The only downside I can come up with submitting a draft Pull Request (as a way to discuss a potential fix or implementation), is that time is lost if not accepted. Now, why would you care and why would you need to do this? 
 
 ## What Your Team Wants x What Your Team Needs
 
 Working in teams consists of some sort of splitting of roles, traditionally you got some sort of leader, either if it is a tech lead, product manager or senior developer, it is important that you have someone to guide and provide balance to a team of engineers (and or designers). I will use these terms interchangeably. This individual should be able to be a bridge between the product and technical needs of a project. That is sometimes is hard to balance. 
 
-To do this, for instance, a [Product Manager](https://en.wikipedia.org/wiki/Product_manager) should be able to understand what the product needs, by talking to the right people, and by being a good messenger to the developers (and or engineers, designers) implementing. This is like Yin and Yang: If the Product Manager fails at one side, the other will suffer. You can be good at figuring out what your product needs, but bad at messaging that to the developers, which then would have downsides. It is important to balance the equation in such way that both the product will hit the right target, as well as that it is delivered by the engineers and designers. This is usually why large scale companies split a Product Manager Role between a more product sided role and a techncial one (and maybe you should do too).
+To do this, for instance, a [Product Manager](https://en.wikipedia.org/wiki/Product_manager) should be able to understand what the product needs, by talking to the right people, and by being a good messenger to the developers (and or engineers, designers) implementing. This is like Yin and Yang: If the Product Manager fails at one side, the other will suffer. You can be good at figuring out what your product needs, but bad at messaging that to the developers, which then would have downsides. It is important to balance the equation in such way that both the product will see daylight, as well as that it is delivered by the engineers and designers. This is usually why large scale companies split a Product Manager Role between a more product sided role and a techncial one (and maybe you should do too).
 
-Let me go through some Point of Views from different roles under a PM, for us to better understand why communicating in Pull Request Reviews are important:
+Let me go through some Point of Views from different roles under a PM, for us to better understand why communicating in Pull Request Reviews are important.
 
 ## Designer
 
@@ -38,15 +38,15 @@ As an engineer, I need to know the requirements of the product, a use case or an
 
 As briefly shown, these two types of roles are dependent on a Product Manager delivering information to them, one being user feedback, the other being a technical requirement or document. A routined leader is therefore needed, in order for teams to stay on a positive trajectory. Both of the tasks mentioned, needs some sort of recipe, much like composing a dinner that consists of different components together. In order to cook the entire dish (your product), you need to do well in both making the main component (i.e meat) as well as the siders (salad).
 
-This is where the Pull Requests come into play. As both designers, product managers and engineers ( designers should have GitHub too, we can fight about it online) needs to communicate, the last step of the train ride is usually the written code. It is easier to iterate on code, than it is to plan first and then write. You will remove a chain of dependency because most teams are agile in some way. 
+This is where the Pull Requests come into play. As both designers, product managers and engineers (designers should have GitHub too, we can fight about it online) needs to communicate, the last step of the train ride is usually the written code. It is easier to iterate on code, than it is to plan first and then write. You will remove a chain of dependency because most teams are agile in some way. 
 
 **If you have a good CI, you have a test server your designer could give feedback based upon, which makes things nice.**
 
 ## Externalizing tools
 
-As designers nowadays use Figma, developers use GitHub and Product Managers use Jira, you will loose some speed versus quality and deliverables. I would say that you need to be able to access the content quickly, either by having a dedicated README for where to find intel at your main documentation source, or have it pasted in red highlights at your doorstep for quick accessability. Clarity is the important part. If you live in three distinct worlds, loss of effectiveness as a result of communication being spread across tools is more likely than speaking two different languages. Write good issues, explain precisely and listen to feedback.
+As designers nowadays use Figma, developers use GitHub and Product Managers use Jira, you will loose some speed versus quality and deliverables. I would say that you need to be able to access the content quickly, either by having a dedicated README for where to find critical information at your main documentation source, or have it pasted in red, capitalized letters at your doorstep for quick accessability. Clarity is the important part. If you live in three distinct worlds, loss of effectiveness as a result of communication being spread across tools is more likely than speaking two different languages. Write good issues, elaborate precisely and listen to feedback.
 
-For Agile teams, in specific, I cannot say this enough: `"write good issue tickets".toUpperCase();` it will reduce your time to implement drastically because you do not need to browse through a lot of information to implement something or take a portion of the job of your Product Manager. 
+For Agile teams, in specific, I cannot say this enough: `"write good issue tickets".toUpperCase();` it will reduce your time to implement drastically because you do not need to browse through a lot of information to implement something or step into the Product Manager role. 
 
 In Code Reviews, technical talk wins, i.e "The button does not show when hovering" versus "I cannot press this button, is my internet not working?", as it vague and does not convey action or constructiveness towards a fix. 
 
@@ -82,20 +82,20 @@ Big source code is hard to review, because it introduces more concepts for a dev
 
 ## Advanced Reviews and Architectural Changes and Large Source Changes
 
-I have encountered these kinds of Pull Requests and these normally comes from a refactor or a big feature being introduced. If it is a MVP and your team is agile, merging an unfinished PR to staging might be good, but if this is meant for production, make sure to be accurate in your reviews. This means that you need to figure out if the abstractions are good, if the source code is consistent and complies to your standards. Pick one of two things to focus on: Architecture or Source. Usually I begin with the abstractions, due the fact that it is easier to fix code standards rather than abstractions once the Proof of Concept or Intent to Implement (Permission to implement this feature is ok) is approved. 
+I have encountered these kinds of Pull Requests and these normally comes from a refactor or a big feature being introduced. If it is a MVP and your team is agile, merging an unfinished PR to staging might be good, but if this is meant for production, make sure to be accurate in your reviews. This means that you need to figure out if the abstractions are good, if the source code is consistent and complies to your standards. Pick one of two things to focus on: Architecture or Source. Usually I begin with the abstractions and architecture, due the fact that it is easier to fix code standards rather than abstractions once the Proof of Concept or Intent to Implement (Permission to implement this feature is ok) is approved, thereby spending time better. 
 
 ## Verification and Roles within Teams
 
-As mentioned, it is important to split tasks, because a Pull Request is a fluent process. Multiple people are involved to shape a product in the long term. Sometimes the source needs a massage, sometimes content needs verification from marketing and sometimes testers need to figure out if the code fixes the issue. All these tasks are why people have fancy titles. These tasks should be split across a longitiude of people, and if you do not have those roles, figure out something with your co-engineers.
+As mentioned, it is important to split tasks, because a Pull Request is a fluent process. Multiple people are involved to shape a product in the long term. Sometimes the source needs a massage, sometimes content needs verification from marketing and sometimes testers need to figure out if the code fixes the issue. All these tasks are why people have fancy titles. These tasks should be split across a longitude of people and if you do not have those roles, figure out something with your co-engineers.
 
-If you have a Product Manager, this is your point of contact. The Product Manager is a Steve Jobs for Software, and a Product Manager not making sure the product is on-line is not good. Developers should code, Managers should manage, that is how it is. Developers have blindspots that managers pick up, so it is important to convay those facts during testing, such that the feedback loop is tight.
+If you have a Product Manager, this is your point of contact. The Product Manager is a Steve Jobs for Software, and a Product Manager not making sure the product is on-line is not good. Developers should code, Managers should manage, that is how it is. Developers have blindspots that managers pick up, so it is important to convey those facts during testing, such that the feedback loop is tight.
 
 ## Summary
 
 In this post I have explained how I would consider a good Pull Request process to be like in teams and people working together. Make sure that your code is consistent, split responsibility, pick your type of review and iterate towards a fix.
 
 
-**You can hit me up me on [twitter](https://twitter.com/evenstensberg) for questions or feedback on this post.**
+**You can hit me up on [twitter](https://twitter.com/evenstensberg) for questions or feedback on this post.**
 
 Thanks for reading, hope it was worth your time!
 
