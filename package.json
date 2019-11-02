@@ -8,7 +8,7 @@
     "dev": "cross-env NODE_ENV=development webpack --config  .webpack/webpack.client.dev.js",
     "build": "cross-env NODE_ENV=production webpack --config .webpack/webpack.client.prod.js --progress",
     "hot": "cross-env NODE_ENV=hot webpack-dev-server --config .webpack/webpack.hot.js",
-    "start": "node app.js",
+    "start": "go run ./app.go",
     "serve": "npm run build && npm run start",
     "deploy": "gcloud app deploy",
     "system-test": "repo-tools test app",
