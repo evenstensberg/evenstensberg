@@ -5,15 +5,29 @@ import (
 	"log"
 	"fmt"
 	"flag"
+	"io/ioutil"
+	"time"
+	"bytes"
 )
 
-func hello_route(w http.ResponseWriter, req *http.Request) {
-	fmt.Fprintf(w, "hello\n")
+
+func postHandler(w http.ResponseWriter, r *http.Request) {
+	query := r.URL.Path[1:]
+	if query == "posts/" {
+		http.Redirect(w, r, "/", 301)
+	}
+	data, err := ioutil.ReadFile(query+".md")
+	if err != nil {
+		fmt.Println(err)
+	}
+	http.ServeContent(w, r, query, time.Time{}, bytes.NewReader(data))
 }
 
 func main() {
-	http.HandleFunc("/hello", hello_route)
-	
+	fs := http.FileServer(http.Dir("public"))
+	http.Handle("/", fs)
+	http.HandleFunc("/posts/", postHandler)
+
 	const DEFAULT_PORT int = 8090
 	PORT := flag.Int("port", DEFAULT_PORT, "port running the application")
 	flag.Parse()
