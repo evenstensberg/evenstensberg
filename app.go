@@ -8,6 +8,7 @@ import (
 	"io/ioutil"
 	"time"
 	"bytes"
+	"github.com/gomarkdown/markdown"
 )
 
 
@@ -20,7 +21,11 @@ func postHandler(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		fmt.Println(err)
 	}
-	http.ServeContent(w, r, query, time.Time{}, bytes.NewReader(data))
+
+	md_b := []byte(data)
+	html := markdown.ToHTML(md_b, nil, nil)
+
+	http.ServeContent(w, r, query, time.Time{}, bytes.NewReader(html))
 }
 
 func main() {
