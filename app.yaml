@@ -1,3 +1,7 @@
 # [START gae_quickstart_yaml]
 runtime: go113
+
+handlers:
+- url: /.*
+  script: auto
 # [END gae_quickstart_yaml]
