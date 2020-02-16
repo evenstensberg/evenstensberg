@@ -1,0 +1,3 @@
+# United Barbells
+
+In October, I visited the United States. During the stay I was in California to visit. United Barbells had a different type of centre. It had an entrance with a BlackBox, rings that spanned to another BlackBox further into the centre. While lifting weights there, I got tired and they had showers that were a great fit for doing some exercise in the city and to get ready for work. Would definitely recommend. 
