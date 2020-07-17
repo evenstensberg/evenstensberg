@@ -1,6 +1,3 @@
-# evenstensberg
-
-
 ## Hi, I'm Even!
 
 **I'm a University Student in Norway**, studying a variation of Computer Science, namely Informatics. I've been actively involved as one of the maintainers of [webpack](https://webpack.js.org/), where I am creating the next user interface (CLI) developers will use, and are using for their applications. 
@@ -12,4 +9,5 @@ Other than that, I like to exercise by doing CrossFit 🏋🏽‍♀️, Soccer 
 
 _My goal with GitHub sponsors is to be able to study and to work with OSS that is essential to the web continuing to thrive._ 
 
-Thanks for taking time to read this ♥️
+Thanks for taking time to read this, you can sponsor me [here](https://github.com/sponsors/evenstensberg) ♥️
+
