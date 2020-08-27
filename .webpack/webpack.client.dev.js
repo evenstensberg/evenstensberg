@@ -68,9 +68,7 @@ module.exports = {
               plugins: function() {
                 return [
                   require("precss")(),
-                  require("autoprefixer")({
-                    browsers: ["last 3 versions", "> 1%", "IE 10"]
-                  }),
+                  require("autoprefixer")(),
                   require("postcss-preset-env")()
                 ];
               }

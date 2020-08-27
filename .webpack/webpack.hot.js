@@ -9,4 +9,7 @@ module.exports = merge(devConfig, {
         port: 8090,
 		headers: {'Access-Control-Allow-Origin': '*'}
 	},
+	plugins: [
+	/* 	new NetworkPlugin() */
+	]
 })

@@ -2,16 +2,18 @@ const path = require("path");
 const webpack = require("webpack");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const GoogleChromeCSStatsPlugin = require('../google-chrome-css-stats/index');
 
 const isDev = true;
 const isHmr = process.env.NODE_ENV === "hmr";
 
-module.exports = [{
+module.exports = {
   devtool: "inline-source-map",
   entry: {
     main: "./lib/index.js"
   },
   mode: "production",
+  stats: 'none',
   output: {
     path: path.join(__dirname, "..", "public"),
     filename: "js/[name].bundle.[hash].js",
@@ -131,63 +133,7 @@ module.exports = [{
     new MiniCssExtractPlugin({
       filename: "css/[name].bundle.[hash].css",
       chunkFilename: "chunks/[id].chunk.[hash].css"
-    })
+    }),
+    new GoogleChromeCSStatsPlugin()
   ]
-}, {
-  entry: {
-    global: './lib/global.scss',
-  },
-  output: {
-    path: path.join(__dirname, "..", "public"),
-    filename: "js/[name].bundle.[hash].js",
-    chunkFilename: "chunks/[name].chunk.[hash].js"
-  },
-  module: {
-    rules: [
-      {
-        test: /\.scss$/,
-        use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              hmr: isHmr,
-              reloadAll: isHmr
-            }
-          },
-          {
-            loader: "css-loader",
-            options: {
-              sourceMap: isDev
-            }
-          },
-          {
-            loader: "postcss-loader",
-            options: {
-              ident: "postcss",
-              sourceMap: isDev,
-              plugins: function() {
-                return [
-                  require("precss")(),
-                  require("autoprefixer")(),
-                  require("postcss-preset-env")()
-                ];
-              }
-            }
-          },
-          {
-            loader: "sass-loader",
-            options: {
-              sourceMap: isDev
-            }
-          }
-        ]
-      }
-    ]
-  },
-  plugins: [
-    new MiniCssExtractPlugin({
-      filename: "css/global.css",
-      chunkFilename: "chunks/[id].chunk.[hash].css"
-    })
-  ]
-}];
+};
