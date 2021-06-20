@@ -5,6 +5,8 @@
 
 I've been contributing to webpack since around 2016/2017 in a combination of being a collaborator, mentor for Google Summer of Code Students and as a vivid enthusiast for the Command Line Interface efforts and usability of webpack (amongst many other superb people)! 🥰
 
+If you need mentorship or webpack related help, you can sponsor me, and I'll help you as much as possible!
+
 Other than that, I like to exercise by doing CrossFit 🏋🏽‍♀️, Soccer ⚽️ and kayaking 🚣🏼‍♂️
 
 _My goal with GitHub sponsors is to be able to study and to work with OSS that is essential to the web continuing to thrive._ 
