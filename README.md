@@ -1,2 +1,1 @@
-<h1 align="center">Hi 👋, I'm Even</h1>
-<h3 align="center">A Software Engineer from Norway 🇳🇴</h3>
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=2F8BF7&center=true&vCenter=true&random=false&width=435&lines=I'm+Even+%F0%9F%87%B3%F0%9F%87%B4++Open+Source+is+fun!+%F0%9F%91%A8%F0%9F%8F%BD%E2%80%8D%F0%9F%92%BB)](https://git.io/typing-svg)
